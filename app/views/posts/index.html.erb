@@ -1,4 +1,10 @@
 <h1>Blog Posts</h1>
+<div>
+<form class="d-flex"  method="GET" action="/search">
+  <input class="form-control me-2" type="search" name="query">
+  <button class="btn btn-outline_success" type="submit">Search</button>
+  </form>
+</div>
 <% @posts.each do |post| %>
     <div class="well">
         <h2><%= post.title%></h2>

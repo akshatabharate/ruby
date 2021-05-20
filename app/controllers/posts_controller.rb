@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    
+http_basic_authenticate_with name: "akshata", password:"1234", except: [:index, :show]
     def index
         @posts = Post.all
     end
@@ -26,6 +26,7 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end    
 
+
     def update
         @post = Post.find(params[:id])
         if(@post.update(post_params))
@@ -34,6 +35,12 @@ class PostsController < ApplicationController
         render 'edit'
        end
     end
+    def search
+        @query =params[:query]
+        @posts=Post.where("posts.title LIKE?",["%#{@query}%"])
+        
+    end
+
 
     def upvote
         @post = Post.find(params[:id])

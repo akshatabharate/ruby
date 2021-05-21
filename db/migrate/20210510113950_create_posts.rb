@@ -6,8 +6,10 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :new
       t.string :weather
       t.string :Sports
+      
 
       t.timestamps
     end
   end
+
 end

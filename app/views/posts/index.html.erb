@@ -7,8 +7,10 @@
 </div>
 <% @posts.each do |post| %>
     <div class="well">
-        <h2><%= post.title.titleize%></h2>
-        <h3><%= post.body.titleize%></h3>
+        <%# <h2><%= post.title.titleize%></h2>
+        <%# <h3><%= post.body.titleize%></h3>
+         
+         <h2><%=post.full_name%></h2>
         <%= link_to "Read More", post_path(post), :class => 'btn btn-default'%>
     </div>
 <% end %>

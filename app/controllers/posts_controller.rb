@@ -4,7 +4,7 @@ http_basic_authenticate_with name: "akshita", password:"12345", except: [:index,
         
         @posts = Post.all.order("created_at DESC")
          @latest_post = @posts.first
-
+        #  @posts = Post.where("concat_wc(' ' , posts.title, posts.body) LIKE ?", "%#{search}%")   
     end
     def test
 

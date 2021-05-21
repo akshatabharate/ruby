@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
 http_basic_authenticate_with name: "akshita", password:"12345", except: [:index, :show,:search]
     def index
-        @posts = Post.all
+        
+        @posts = Post.all.order("created_at DESC")
+         @latest_post = @posts.first
+
     end
     def test
-        
+
     end
 
     def show
@@ -13,6 +16,7 @@ http_basic_authenticate_with name: "akshita", password:"12345", except: [:index,
 
     def new
         @post=Post.new
+        
     end
 
     def create

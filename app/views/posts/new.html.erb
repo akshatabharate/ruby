@@ -16,6 +16,13 @@
      <p>
     <%= f.label :body %> <br>
     <%= f.text_field :body, {:class => 'form_control'} %>
+
+    <select name="title">
+  <option value="BE">new</option>
+  <option value="CHI">weather</option>
+  <option value="MD" selected="selected">Sports</option>
+</select>
+
     </p>
      <p>
     <%= f.submit({:class => 'btn btn-primary'}) %> 

@@ -2,7 +2,7 @@
 <div>
 <form class="d-flex"  method="GET" action="/search">
   <input class="form-control me-2" type="search" name="query">
-  <button class="btn btn-outline_success" type="submit">Search</button>
+  <button class="btn btn-primary" type="submit">Search</button>
   </form>
 </div>
 <% @posts.each do |post| %>
@@ -11,7 +11,7 @@
         <%# <h3><%= post.body.titleize%></h3>
          
          <h2><%=post.full_name%></h2>
-        <%= link_to "Read More", post_path(post), :class => 'btn btn-default'%>
+        <%= link_to "Read More", post_path(post), :class => 'btn btn-primary'%>
     </div>
 <% end %>
 

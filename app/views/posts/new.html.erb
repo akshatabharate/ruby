@@ -16,12 +16,13 @@
      <p>
     <%= f.label :body %> <br>
     <%= f.text_field :body, {:class => 'form_control'} %>
+    <%= f.select :category_id, Category.all.map{ |c| [c.category, c.id] } %>
 
-    <select name="title">
+    <%# <select name="title">
   <option value="BE">new</option>
   <option value="CHI">weather</option>
   <option value="MD" selected="selected">Sports</option>
-</select>
+</select>%>
 
     </p>
      <p>

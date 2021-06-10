@@ -1,5 +1,7 @@
 <h1>search results</h1>
+ 
 <% @posts.each do |post| %>
 <p><%= post.title %></p>
 <p><%= post.body %></p>
+ <%= link_to "Read More", post_path(post), :class => 'btn btn-primary'%>
 <% end%>

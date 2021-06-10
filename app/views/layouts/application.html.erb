@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag  'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>  
   </head>
 
   <body>
@@ -25,7 +25,7 @@
         <ul class="nav navbar-nav">
         <li><%= link_to "Home ", home_path%></li>
          </ul>
-         <p> </p>
+         <p><%= link_to "category", new_category_path%> </p>
         <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Create Post", new_post_path%></li>
       </ul>

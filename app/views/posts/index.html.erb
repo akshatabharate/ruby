@@ -5,15 +5,33 @@
   <button class="btn btn-primary" type="submit">Search</button>
   </form>
 </div>
-<% @posts.each do |post| %>
-    <div class="well">
-        <%# <h2><%= post.title.titleize%></h2>
-        <%# <h3><%= post.body.titleize%></h3>
-         
-         <h2><%=post.full_name%></h2>
-        <%= link_to "Read More", post_path(post), :class => 'btn btn-primary'%>
+<div class="cal-md-4">
+    <div class="card mt-4">
+          <div class="card-header">
+              Categories
+          </div>
+
+          <div class="card-body">
+                  <% @categories.each do |category|%>
+                    <div class="well"> 
+                          <h1><%= link_to category.category, posts_path(:cate => category.id) %></h1>
+                    </div>
+                  <%end %>
+          </div>
     </div>
-<% end %>
+</div>
+
+
+<% @posts.each do |post| %>
+    <div class="well"> 
+         <h2><%= post.title.titleize%></h2>
+        <h3><%= post.body.titleize%></h3> 
+        
+         <%# <h2><%=post.full_name%></h2> 
+         <%= link_to "Read More", post_path(post), :class => 'btn btn-primary'%>
+    </div>
+<% end %> 
+
 
 
 

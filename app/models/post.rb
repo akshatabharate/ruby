@@ -1,12 +1,13 @@
 class Post < ApplicationRecord
-    searchkick word_middle: [:title, :body]
-    def search_data
-        {
-            title: title,
-            body: body,
-            comment: comment
-        }
-    end
+    # searchkick word_middle: [:title, :body]
+    # def search_data
+    #     {
+    #         title: title,
+    #         body: body,
+    #         comment: comment
+    #     }
+    #end
+    belongs_to :user
     belongs_to :category
    
     has_many :comments, dependent: :destroy

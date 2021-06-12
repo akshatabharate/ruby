@@ -2,12 +2,14 @@
 <h1>Category:<%= @post.category&.category %></h1>
 <h2><%= @post.title %></h2>
 <p><%= @post.body%> </p>
-
+<% if @post.user == current_user%> 
+  <%= link_to "edit", edit_post_path(@post), :class => 'btn btn-primary'%>
+  <%= link_to "Delete", post_path(@post),  method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>  
+<% end %>
 
 
 <hr>
-<%= link_to "edit", edit_post_path(@post), :class => 'btn btn-primary'%>
-<%= link_to "Delete", post_path(@post),  method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>
+
 <%= link_to "back", posts_path, :class => 'btn btn-primary'%>
 
 <hr>

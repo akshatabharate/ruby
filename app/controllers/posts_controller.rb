@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   
-      http_basic_authenticate_with  name: "akshata", password:"12345", except: [:index, :show,:search]
+    #   http_basic_authenticate_with  name: "akshata", password:"12345", except: [:index, :show,:search]
+    before_action :authenticate_user!, except: [:show, :index, :search]
     def show
         @post = Post.find(params[:id])
         @categories = Category.all
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
     def create
         #render plain: params[:post].inspect
         @post = Post.new(post_params)
+        @post.user = current_user
        if(@post.save)
             redirect_to @post
        else
@@ -43,6 +45,7 @@ class PostsController < ApplicationController
     end
 
     def edit
+        @post.user = current_user
         @post = Post.find(params[:id])
     end    
 
@@ -57,11 +60,11 @@ class PostsController < ApplicationController
     end
     def search
         @query =params[:query]
-        #  @posts=Post.where("posts.title LIKE?",["%#{@query}%"])
-         @posts = Post.search "posts"
-         @posta.each do |post|
-           puts post.title
-         end
+         @posts=Post.where("posts.title LIKE?",["%#{@query}%"])
+        #  @posts = Post.search "posts"
+        #  @posta.each do |post|
+        #    puts post.title
+        #  end
     end
 
 

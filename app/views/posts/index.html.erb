@@ -10,7 +10,8 @@
   <button class="btn btn-primary" type="submit">Search</button>
   </form>
 </div>
-<div class="cal-md-4">
+
+<div class="cal-md-4 ">
     <div class="card mt-4">
           <div class="card-header">
               Categories
@@ -19,7 +20,7 @@
           <div class="card-body">
                   <% @categories.each do |category|%>
                     <div class="well"> 
-                          <h1><%= link_to category.category, posts_path(:cate => category.id) %></h1>
+                          <h5><%= link_to category.category, posts_path(:cate => category.id) %></h5>
                     </div>
                   <%end %>
           </div>

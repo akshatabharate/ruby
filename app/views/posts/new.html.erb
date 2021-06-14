@@ -9,22 +9,22 @@
             </div>
         <%end%>
      <%end%>
-    <p>
-    <%= f.label :title %> <br>
+    <h5>
+    <%= f.label :title %><br>
     <%= f.text_field :title, {:class => 'form_control'} %>
-    </p>
-     <p>
+    </h5>
+     <h5>
     <%= f.label :body %> <br>
     <%= f.text_field :body, {:class => 'form_control'} %>
-    <%= f.select :category_id, Category.all.map{ |c| [c.category, c.id] } %>
+    </h5>
+   <h5> <%= f.select :category_id, Category.all.map{ |c| [c.category, c.id] } %>
 
     <%# <select name="title">
   <option value="BE">new</option>
   <option value="CHI">weather</option>
   <option value="MD" selected="selected">Sports</option>
 </select>%>
-
-    </p>
+   </h5>
      <p>
     <%= f.submit({:class => 'btn btn-primary'}) %> 
     </p>

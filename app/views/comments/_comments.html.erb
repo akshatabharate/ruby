@@ -7,9 +7,9 @@
         <h4><%= comment.username%><h4>
         <h5><%= comment.body%><h5>
         
-        
+        <% if @post.user == current_user%> 
         <%= link_to 'Delete comment', [comment.post, comment],  method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>
-        
+        <%end%>
         </strong>
          </p>
          
